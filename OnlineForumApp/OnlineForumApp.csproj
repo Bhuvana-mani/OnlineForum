@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Discussion_Forum_Database.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Discussion_Forum_Database.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ForumLibrary\ForumLibrary.csproj" />
+  </ItemGroup>
+
+</Project>
