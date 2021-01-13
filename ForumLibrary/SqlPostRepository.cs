@@ -26,8 +26,8 @@ namespace ForumLibrary
         {
             using (var connection = new SqliteConnection(_connectionString))
             {
-                var sql = "INSERT INTO Post (Post_Id,Comment,User_Id,Thread_Id) " +
-                    "VALUES (@Post_Id,@Comment,@User_Id,@Thread_Id); " +
+                var sql = "INSERT INTO Post (Comment,User_Id,Thread_Id) " +
+                    "VALUES (@Comment,@User_Id,@Thread_Id); " +
                     "SELECT last_insert_rowid();";
                   var id = connection.Query<int>(sql, post);
                   post.Post_Id = id.First();
@@ -38,7 +38,7 @@ namespace ForumLibrary
         {
             using (var connection = new SqliteConnection(_connectionString))
             {
-                var sql = "UPDATE Post SET Comment = @Comment WHERE Post_Id = @Post_Id;";
+                var sql = "UPDATE Post SET Comment = @Comment WHERE Post_Id = @Post_Id ;";
                 connection.Execute(sql, post);
 
             }
@@ -52,25 +52,14 @@ namespace ForumLibrary
 
             }
         }
-        public List<Post> WithThread(Thread mthread)
+        public List<Post> WithThread(Thread thread)
         {
             using (var connection = new SqliteConnection(_connectionString))
             {
-                var sql = "SELECT *FROM Post AS p" +
-                    "JOIN Thread AS t ON t.Post_Id=p.Id";
-                var postDictionary = new Dictionary<int, Post>();
-                var posts = connection.Query<Post,Thread, Post>(sql,
-                (post, thread) =>
-                {
-                    if (!postDictionary.ContainsKey(post.Post_Id))
-                    {
-                        postDictionary.Add(post.Post_Id, post);
-                    }
-                    var postEntry = postDictionary[post.Post_Id];
-                    postEntry.Threads.Add(thread);
-                    return postEntry;
-                });
-                return posts.Distinct().ToList();
+                
+                var sql = "SELECT * FROM Post WHERE Thread_Id=@Thread_Id ";
+                return connection.Query<Post>(sql,thread ).ToList();
+                
 
             }
         }

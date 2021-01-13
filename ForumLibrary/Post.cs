@@ -15,6 +15,6 @@ namespace ForumLibrary
         public string Comment { get; set; }
         public int User_Id { get; set; }
         public int Thread_Id { get; set; }
-        public List<Thread> Threads { get; set; } = new List<Thread>();
+        
     }
 }

@@ -20,28 +20,8 @@ namespace ForumLibrary
             }
 
         }
-        public List<User> UserWithThread()
-        {
-            using (var connection = new SqliteConnection(_connectionString)) 
-            {
-                var sql = "SELECT *FROM User AS u" +
-                   "JOIN Thread AS t ON t.User_Id=u.Id";
-                var userDictionary = new Dictionary<int, User>();
-                var users = connection.Query<User, Thread, User>(sql,
-                (user, thread) =>
-                {
-                    if (!userDictionary.ContainsKey(user.User_Id))
-                    {
-                        userDictionary.Add(user.User_Id, user);
-                    }
-                    var userEntry = userDictionary[user.User_Id];
-                    userEntry.Threads.Add(thread);
-                    return userEntry;
-                });
-                return users.Distinct().ToList();
-
-            }
+       
             
-        }
+        
     }
 }
