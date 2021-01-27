@@ -27,10 +27,10 @@ namespace OnlineForumApp
                 Console.WriteLine("1. To create a new thread");
                 Console.WriteLine("2.To view the thread with its related post");
                 Console.WriteLine("3.To create a post/comment on a thread");
-                
                 Console.WriteLine("4.To delete a post");
                 Console.WriteLine("5.To view user ");
-                Console.WriteLine("6.To exit");
+                Console.WriteLine("6. To view the user with their threadscount");
+                Console.WriteLine("7.To exit");
                 input = int.Parse(Console.ReadLine());
                 Console.WriteLine("*************************************************************************************************");
                 switch (input)
@@ -57,6 +57,9 @@ namespace OnlineForumApp
                         UserList();
                         break;
                     case 6:
+                        UserwithThreadCount(_userRepo);
+                        break;
+                    case 7:
                         break;
 
                 }
@@ -64,7 +67,7 @@ namespace OnlineForumApp
 
 
             }
-            while (input < 6);
+            while (input < 7);
 
 
         }
@@ -83,6 +86,17 @@ namespace OnlineForumApp
             foreach(var ut in user)
             {
                 Console.WriteLine(ut.Name);
+            }
+        }
+        static void UserwithThreadCount(SqliteUserRepository urepo)
+        {
+            Console.WriteLine("enter a user id" );
+            var userid = int.Parse(Console.ReadLine());
+            var user = urepo.GetUserById(userid);
+            var uthread = urepo.GetUserwithThread(user);
+            foreach (var ut in uthread)
+            {
+                Console.WriteLine($"{ut.Name}    {ut.Threads.Count}");
             }
         }
         static void CreateThread()
@@ -106,8 +120,7 @@ namespace OnlineForumApp
                 Console.WriteLine(tp.Comment);
             }
         }
-
-
+       
 
         static void CreatePost()
         {

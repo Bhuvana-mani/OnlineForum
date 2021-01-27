@@ -1,0 +1,9 @@
+C:\WORKSPACE\SYSTEM_APP_DEVELOPMENT\assignments\OnlineForum\ForumLibrary\bin\Debug\netstandard2.0\ForumLibrary.deps.json
+C:\WORKSPACE\SYSTEM_APP_DEVELOPMENT\assignments\OnlineForum\ForumLibrary\bin\Debug\netstandard2.0\ForumLibrary.dll
+C:\WORKSPACE\SYSTEM_APP_DEVELOPMENT\assignments\OnlineForum\ForumLibrary\bin\Debug\netstandard2.0\ForumLibrary.pdb
+C:\WORKSPACE\SYSTEM_APP_DEVELOPMENT\assignments\OnlineForum\ForumLibrary\obj\Debug\netstandard2.0\ForumLibrary.csprojAssemblyReference.cache
+C:\WORKSPACE\SYSTEM_APP_DEVELOPMENT\assignments\OnlineForum\ForumLibrary\obj\Debug\netstandard2.0\ForumLibrary.AssemblyInfoInputs.cache
+C:\WORKSPACE\SYSTEM_APP_DEVELOPMENT\assignments\OnlineForum\ForumLibrary\obj\Debug\netstandard2.0\ForumLibrary.AssemblyInfo.cs
+C:\WORKSPACE\SYSTEM_APP_DEVELOPMENT\assignments\OnlineForum\ForumLibrary\obj\Debug\netstandard2.0\ForumLibrary.csproj.CoreCompileInputs.cache
+C:\WORKSPACE\SYSTEM_APP_DEVELOPMENT\assignments\OnlineForum\ForumLibrary\obj\Debug\netstandard2.0\ForumLibrary.dll
+C:\WORKSPACE\SYSTEM_APP_DEVELOPMENT\assignments\OnlineForum\ForumLibrary\obj\Debug\netstandard2.0\ForumLibrary.pdb
